@@ -7,15 +7,17 @@
         <groupId>pub.ants</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>pub.ants</groupId>
     <artifactId>spring-dubbo-provider</artifactId>
+    <version>${project.provider.version}</version>
 
     <dependencies>
         <dependency>
             <groupId>pub.ants</groupId>
             <artifactId>spring-dubbo-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.api.version}</version>
         </dependency>
     </dependencies>
 </project>
