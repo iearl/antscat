@@ -12,7 +12,11 @@ buildNumber.properties
 .gitignore
 
 .idea/
+.mvn/
+HELP.md
 vcs.xml
+mvnw
+mvnw.cmd
 
 ## File-based project format:
 *.iws
@@ -35,4 +39,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-git
