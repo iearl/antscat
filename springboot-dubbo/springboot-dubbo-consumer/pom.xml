@@ -34,12 +34,6 @@
             <artifactId>springboot-boot-api</artifactId>
             <version>${project.api.version}</version>
         </dependency>
-        <!-- alibaba dubbo-spring-boot-starter -->
-        <dependency>
-            <groupId>com.alibaba.spring.boot</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${boot.dubbo.version}</version>
-        </dependency>
     </dependencies>
 
     <build>

@@ -16,7 +16,6 @@
         <project.provider.version>1.0-SNAPSHOT</project.provider.version>
         <project.consumer.version>1.0-SNAPSHOT</project.consumer.version>
         <project.api.version>1.0-SNAPSHOT</project.api.version>
-        <project.project.version>1.0-SNAPSHOT</project.project.version>
     </properties>
     <modules>
         <module>spring-dubbo-provider</module>

@@ -1,4 +1,4 @@
-package api;
+package pub.ants.api;
 
 /**
  * @author magw
