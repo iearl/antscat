@@ -14,5 +14,5 @@
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
     <dubbo:reference
             url="dubbo://127.0.0.1:20880"
-            id="service" interface="pub.ants.provider.Service" />
+            id="service" interface="pub.ants.api.Service" />
 </beans>

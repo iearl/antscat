@@ -1,5 +1,7 @@
 package pub.ants.provider;
 
+import pub.ants.api.Service;
+
 /**
  * @author magw
  * @version 1.0

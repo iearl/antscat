@@ -1,9 +1,9 @@
-package pub.ants.provider;
+package pub.ants.api;
 
 /**
  * @author magw
  * @version 1.0
- * @date 2019/8/25 上午8:19
+ * @date 2019/8/25 上午9:10
  * @description: No Description
  */
 public interface Service {

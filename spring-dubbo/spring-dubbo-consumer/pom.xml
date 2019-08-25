@@ -11,5 +11,11 @@
 
     <artifactId>spring-dubbo-consumer</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>pub.ants</groupId>
+            <artifactId>spring-dubbo-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

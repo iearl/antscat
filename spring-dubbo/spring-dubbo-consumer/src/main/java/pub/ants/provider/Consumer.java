@@ -1,6 +1,7 @@
 package pub.ants.provider;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import pub.ants.api.Service;
 
 /**
  * @author magw
