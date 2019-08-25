@@ -12,7 +12,7 @@ import pub.ants.api.Service;
  */
 @Component
 public class HelloService {
-    @Reference(url = "dubbo://localhost:20880")
+    @Reference
     Service service;
 
     public String hello(String msg){
