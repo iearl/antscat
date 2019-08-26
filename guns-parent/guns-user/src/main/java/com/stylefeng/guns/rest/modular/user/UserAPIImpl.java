@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class UserAPIImpl implements UserAPI {
     @Override
     public boolean login(String username, String password) {
-        System.out.println("this is user service,username="+username+", password="+password);
+        System.out.println("this is userservice,username="+username+", password="+password);
         return false;
     }
 }
