@@ -25,13 +25,12 @@ public class AuthController {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    @Resource(name = "simpleValidator")
-    private IReqValidator reqValidator;
 
     @RequestMapping(value = "${jwt.auth-path}")
     public ResponseEntity<?> createAuthenticationToken(AuthRequest authRequest) {
 
-        boolean validate = reqValidator.validate(authRequest);
+        boolean validate = true;
+
 
         if (validate) {
             final String randomKey = jwtTokenUtil.getRandomKey();

@@ -8,6 +8,7 @@ import com.stylefeng.guns.rest.modular.auth.controller.dto.AuthRequest;
 import com.stylefeng.guns.rest.modular.auth.controller.dto.AuthResponse;
 import com.stylefeng.guns.rest.modular.auth.util.JwtTokenUtil;
 import com.stylefeng.guns.rest.modular.auth.validator.IReqValidator;
+import com.stylefeng.guns.rest.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,26 +28,28 @@ public class AuthController {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    @Resource(name = "simpleValidator")
-    private IReqValidator reqValidator;
 
     @Reference
     private UserAPI userAPI;
 
     @RequestMapping(value = "${jwt.auth-path}")
-    public ResponseEntity<?> createAuthenticationToken(AuthRequest authRequest) {
+    public ResponseVO createAuthenticationToken(AuthRequest authRequest) {
 
-        userAPI.login(authRequest.getUserName(),authRequest.getPassword());
+        boolean validate = true;
 
-
-        boolean validate = reqValidator.validate(authRequest);
+        //去掉guns自带的用户名密码验证机制，使用自定义验证
+        int userId = userAPI.login(authRequest.getUserName(), authRequest.getPassword());
+        if(userId==0){
+            validate = false;
+        }
 
         if (validate) {
+            //randomKey+token 生成
             final String randomKey = jwtTokenUtil.getRandomKey();
-            final String token = jwtTokenUtil.generateToken(authRequest.getUserName(), randomKey);
-            return ResponseEntity.ok(new AuthResponse(token, randomKey));
+            final String token = jwtTokenUtil.generateToken(userId+"", randomKey);
+            return ResponseVO.success(new AuthResponse(token,randomKey));
         } else {
-            throw new GunsException(BizExceptionEnum.AUTH_REQUEST_ERROR);
+            return ResponseVO.serviceFail("用户名或密码不存在");
         }
     }
 }
